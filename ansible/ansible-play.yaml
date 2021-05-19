@@ -1,7 +1,7 @@
 ---
 
 - name: delete docker image
-  hosts: 10.57.51.168
+  hosts: ##here put ip address
   become: true
   tasks:
      - name: delete unused image
