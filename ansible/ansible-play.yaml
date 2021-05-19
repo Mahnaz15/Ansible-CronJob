@@ -1,0 +1,9 @@
+---
+
+- name: delete docker image
+  hosts: 10.57.51.168
+  become: true
+  tasks:
+     - name: delete unused image
+       script: /etc/ansible/test-script.sh
+ 

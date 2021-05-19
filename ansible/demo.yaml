@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  tasks:
+     - name: Copy the Script
+       copy: src=/etc/ansible/deleteDockerImage.sh dest=/home/opc/
+  
+     - name: Run the Cronjob for Delete Unused Docker Images
+       cron:
+        name: Run Every Sunday 9p.m
+        minute: "0"
+        hour: "21"
+        weekday: "sun"
+        job: "/bin/bash /home/opc/deleteDockerImage.sh"
+#        state: absent
